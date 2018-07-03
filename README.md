@@ -1,4 +1,4 @@
-               
+                 
 # TRABALHO 01:  Semaforup
 Trabalho desenvolvido durante a disciplina de Banco de Dados do Integrado
 
@@ -24,7 +24,7 @@ Em um cruzamento de duas ou mais vias existem movimentos que não podem ser feit
 
 Entrevista com o usuário e identificação dos requisitos.<br>
 Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
+cujos elementos são dpropriedades que desejamos incluir, processar, armazenar, 
 gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 
 > O sistema que foi proposto para o Semaforup, trata-se de um sistema simples que calcula proporcionalmente de 1 para 1 os semáforos cadastrados na base de dados. Os semáforos com essa tecnologia e esse software são chamados de "Semafobots", eles tem uma programação e a utilização de sensores que permitem calcular o tempo que outro semáforo vinculado irá ficar aberto. A informção é captada por um sensor que se localiza no chão paralelo ao semáforo, então, as informações relacionadas a quantidade de carros (fluxo) e velocidade média por minuto. 
@@ -42,24 +42,15 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 
 #### 4.1 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
-    e deve ser criada antes do modelo conceitual
-    c) Após criada esta tabela não deve ser modificada, pois será comparada com os resultados finais na conclusão do trabalho
-    
+    *feito*    
     
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a)Como não haverá conflitos de semáforos abertos ao mesmo tempo na mesma tragetória?
-    Os Bots estão todos conectados a um rede wi-fi que estabelecem sinal no servidor central se comunicando entre si e trocando informações, as configurações inicialmetne pré programadas servem como base. Os bots com uma conexão saberão a hora certa de abrir um semáforo, depois de algum cruzamento ou rua movimentada se estiver ao redor da tragetória.
-    b) Como as informações serão armazenadas para se adaptarem ao fluxo?
-    Cada Bot terá sua função determinada em certo local, ele capta as informações necessárias e envia para o servidor central e para outros Bots. Essa informações serão organizadas pelo número de identificação que cada Bot receberá,e a partir delas será possível fazer a localização. Como a taxa de atualizações são a cada 5 segundos, a cada 5 segundos novas linhas de informações serão criadas. Acessando pelo computador, será possível ver as informações que foram armazenas em determinado horário ou dia, enquanto ela mesma produz mais informações que são possíveis serem vistas em tempo real.
-    c)Os operários do sistema de liberdade para alterarem quais funções?
-    Os operários credenciados pelo empresa tem autorização para controlar os bots que percebem que estão com mal funcionamento. Em casos maiores há a possibilidade, em caso de algume evento especial na localidade, alterar as informações e até programar uma ação para ser executado naquele instante, e baseada nessas informações adquiridas manualmente,os bots adaptarão sua maneira de agir para aquele momento,após o termino os bots voltam a configuração normal sem precisar de operários alterarem manualmente. Além disso ,os operários tem acesso a todas as informações captadas de todos os Bots de qualquer lugar do Espírito Santo.
+    a) Como fazer c om que não haja conflitos de semáforos abertos ao mesmo tempo na mesma tragetória?
+    b) Como as informaçõs serão armazenadas para se adaptarem ao fluxo?,
+    c) Como os operários do sistema de liberdade para alterarem quais funções?
     d) Como serão obtidas as informações necessárias para que os semáforos funcionem de forma inteligente? 
-    Atravez de marcadores(sensores) no asfalto que contam a passagem dos veículos e os dados são enviados para um banco de dados.
     e) Como é determinado qual via o semáforo deve permanecer mais tempo aberto? 
-    Se os semáforos identificam que vários carros passam pelos sensores com uma velocidade de 80km/h, o sistema identificará, baseados nos mapas, que aquele trageto demanda de mais velocidade e menos tempo parado em determinado horário, mas tendo que acrescentar tempo em outro semáforo, assim se comunicando entre si e analisar qual rotas próximas menos utilizada no momento para adicionar o tempo e controlar o trânsito.    
-
+    *feito*
     
 >## Marco de Entrega 01 em: (24/03/2018)<br>
 
@@ -76,28 +67,56 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         Garantir que a semântica dos atributos seja clara no esquema
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
         e tuplas falsas
+    *feito*    
     
         
     
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Nomes dos que participaram na avaliação]
     [Grupo02]: [Nomes dos que participaram na avaliação]
+    *?*
 ## Marco de Entrega 01 em: (20/04/2018)<br>
 #### 5.2 DECISÕES DE PROJETO
     [atributo]: [descrição da decisão]
     
-    EXEMPLO:
-    a) Campo endereço: em nosso projeto optamos por um campo multivalorado e composto, pois a empresa 
-    pode possuir para cada departamento mais de uma localização... 
-    b) justifique!
+    Campos de Código (cod_): são multivalorados que são majoritariamente únicos, sendo utilizados como atributos chave para localização e identificação, como são números de série, é importante que tivesse o atributo "int". 
+    Campo data: utiliza o atributo "Date", propriamente utilizado para registro de datas, utilizado da forma simples contendo apenas dia,mês e ano [4 digitos]
+    Campo minuto e hora: é um multivalorado que recebe um valor único, não utilizado como "hour" pois com esse campo será feito cálculos utilizando outros campos multivalorados "int"
+    Campo Quantidade (quant_): são multivalores que servem como contadores, que se atribuem +1 a cada carro identificado em sua passagem pelos sensores do semáforo
+    Campo senha e Usuário: são valores compostos, permitido o uso de caracteres e valores numéricos, principamente em senhas para fortalecer a proteção da senha, qualquer invasão poderia acarretar sérios danos ao trânsito
+    Campo Nomes (bairro_,cidade_,rua_): São valores atribuidos apenas a caracteres (50), o sistema dos semáforos trabalham com os códigos delas e são passadas ao sistema como um valor simples, não serão utilizados para cálculos
+    *feito*
+
 
 #### 5.3 DESCRIÇÃO DOS DADOS 
-    [objeto]: [descrição do objeto]
-    
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
 
+    numero_semaforo: campo que armazena numero de localização do Semáforo<br>
+    rua_semaforo: campo que armazena o nome da rua onde o semaforo se localiza.<br>
+    bairro_semaforo: campo que armazena o nome do bairro onde o semaforo se localiza.<br>
+    cidade_semaforo: campo que armazena o nome da cidade onde o semaforo se localiza.<br>
+    cod_rua: código referente a uma determinada rua
+    cod_bairro: código referente a um determinado bairro
+    cod_cidade: código referente a uma determinada cidade
+    cod_geral: código de localização que junta os códigos cidade,bairro e rua
+    minuto: armazena o minuto em que a analise dos dados de contagem de carros e cálculos que foram feitos, usado para media por minuto,
+    hora: armazena a hora em que a analise dos dados de contagem de carros e cálculos que foram feitos,usado para media por hora
+    quant_semaforo_vinc: quantidade de semáforos que estão vinculados a esse semáforo, no caso, para estabelecerem conexão entre si e não haver incompatibilidade no tráfego, trocam informações entre si.
+    quant_carro_rua_min: armazena a quantidade de carros que passam em determinada rua por minuto
+    quant_carro_hr_med: armazena a quantidade de carros que passam em determinada rua por hora, já fazendo a média geral
+    med_quant_carros_dia: armazena a quantidade de carros que passaram em um determinado dia a partir de 00:00, baseado nas médias por hora
+    data_analise: armazena o dia,mês e ano em que a verificação/análise faz, no caso a cada minuto
+    tempo_fechado: baseado nas informações captadas e nos cálculos efetuados, o tempo que determinado semáforo ficará fechado
+    nome_usuario_comum: armazena nome de usuario de um usuário comum, que utiliza o sistema apeenas para visualizar
+    senha_usuario_comum: armazena senha referente ao usuario comum registrado
+    cod_usuario: codigo de identificação referente ao usuário comum registrado
+    nome_operario: armazena nome de usuário de um operário do sistema que tem permissões para alterar dados no sistema, como tempo do semáforo, limite do tráfego,etc.
+    senha_operario: armazena senha referent ao operário cadastrado
+    cod_operario: codigo de identificação referente ao operario comum cadastrado
+    *feito*
+    
+    
+    
+    
 >## Marco de Entrega 01 em: (12/05/2018)<br>
 ### 6	MODELO LÓGICO<br>
         a) inclusão do modelo lógico do banco de dados
