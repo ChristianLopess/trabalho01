@@ -27,13 +27,13 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 > O sistema proposto para o semafobot trata-se de um sistema integrado a câmeras próprias capazes de analisar a movimentação de veículos em cada uma das vias de um cruzamento; e, a partir dos dados, tomar automaticamente decisões para melhorar o fluxo na via mais carregada. Na prática cotidiana, ele ajustará o sinal para permanecer aberto por mais tempo onde há maior demanda e fechar mais rapidamente quanto for oportuno, marcadores no asfalto contam a passagem dos veículos e os dados são enviados para um banco de dados, que calcula quanto tempo os sinais devem ficar abertos e fechados. A informação é utilizada por um controlador para fazer o ajuste.Todos os dados e imagens coletadas pelos semafobot's serão enviadas para o nossos bancos de dados, de lá, os técnicos farão o acompanhamento das condições para também realizar intervenções manuais.
 
 
-### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br> ✔&
+### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br> ✔
 Neste ponto a codificação não e necessária, somente as ideias de telas devem ser desenvolvidas. O princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas e/ou descartadas <br>
 
 Sugestão: https://balsamiq.com/products/mockups/<br>
 
-![Alt text](https://github.com/discipbd1/trab01/blob/master/balsamiq.png?raw=true "Title")
-![Arquivo PDF do Protótipo Balsamiq feito para Empresa Devcom](https://github.com/semaforup/trabalho01/blob/master/arquivos/NewProject.pdf?raw=true "Empresa Semaforup")
+![Alt text](https://github.com/semaforup/trabalho01/blob/master/imagens/img.png?raw=true "Title")
+![Arquivo PDF do Protótipo Balsamiq feito para Empresa Semaforup](https://github.com/semaforup/trabalho01/blob/master/arquivos/NewProject.pdf?raw=true "Empresa Semaforup")
 
 
 #### 4.1 TABELA DE DADOS DO SISTEMA: ✔  
@@ -48,20 +48,9 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 5)quantos carros ultrapassaram uma determinada velocidade em determinado logradouro?
 
 
-### 5.MODELO CONCEITUAL<br>
-    A) NOTACAO ENTIDADE RELACIONAMENTO 
-        * Para nosso prótótipo limitaremos o modelo conceitual nas 5 principais entidades do escopo
-        * O protótipo deve possui no mínimo duas relações N para N
-        * o mínimo de entidades do modelo conceitual será igual a 5
+### 5.MODELO CONCEITUAL<br> ✔
         
-![Alt text](https://github.com/discipint/trabalho01/blob/master/imagens/modelo_conceitual_empresa.png?raw=true "Modelo Conceitual")
-    
-    B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
-    C) QUALIDADE 
-        Garantir que a semântica dos atributos seja clara no esquema
-        Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
-        e tuplas falsas
-    
+![Alt text](https://github.com/semaforup/trabalho01/blob/master/imagens/Conceitual.png?raw=true "Modelo Conceitual")   
         
     
 #### 5.1 Validação do Modelo Conceitual ✔
@@ -69,7 +58,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 [Grupo 02] : [Rafael Rodriguez, Leonardo Fafá]
 
 
-#### 5.2 DECISÕES DE PROJETO
+#### 5.2 DECISÕES DE PROJETO ✔
     [atributo]: [descrição da decisão]
     esta_em: A opção de usar uma tabela que guarde as informações separadas das localidades pois podem haver locais  com os mesmo nomes
     SENSOR: A opção de usar uma tabela que guarde todas as informações de carros captados pois as informações altera
@@ -77,7 +66,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     SEMAFORO: A opção de ter a tabela semáforo pois ela é a principal onde as ideias circulam
     USUARIO: A opção de usar uma tabela que guarde as informações dos usuarios 
 
-#### 5.3 DESCRIÇÃO DOS DADOS
+#### 5.3 DESCRIÇÃO DOS DADOS ✔
     comum: Campo que identifica o tipo de usuario como comum
     operario: Campo que identifica o tipo de usuario como operario
     cod_usuario: Campo único de identificação de um usuario
@@ -107,9 +96,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     
 >## Marco de Entrega 01 em: (12/05/2018)<br>
 ### 6	MODELO LÓGICO<br>
-        a) inclusão do modelo lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
+![Alt text](https://github.com/semaforup/trabalho01/blob/master/imagens/L%C3%B3gico.PNG?raw=true "Modelo Lógico")
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas DDL 
