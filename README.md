@@ -64,25 +64,20 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     
         
     
-#### 5.1 Validação do Modelo Conceitual ✔&
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+#### 5.1 Validação do Modelo Conceitual ✔
+[Grupo 01] : [Júlia Ferreira, Kézia Souza, Mariana Poli]
+[Grupo 02] : [Rafael Rodriguez, Leonardo Fafá]
 
 
 #### 5.2 DECISÕES DE PROJETO
     [atributo]: [descrição da decisão]
+    esta_em: A opção de usar uma tabela que guarde as informações separadas das localidades pois podem haver locais  com os mesmo nomes
+    SENSOR: A opção de usar uma tabela que guarde todas as informações de carros captados pois as informações altera
+    CAPTURA: A opção de captura acontece a cada vez que um carro passa no sensor 
+    SEMAFORO: A opção de ter a tabela semáforo pois ela é a principal onde as ideias circulam
+    USUARIO: A opção de usar uma tabela que guarde as informações dos usuarios 
 
-
- 
-
-
-    EXEMPLO:
-    a) Campo endereço: em nosso projeto optamos por um campo multivalorado e composto, pois a empresa 
-    pode possuir para cada departamento mais de uma localização... 
-    b) justifique!
-
-#### 5.3 DESCRIÇÃO DOS DADOS 
-    [objeto]: [descrição do objeto]
+#### 5.3 DESCRIÇÃO DOS DADOS
     comum: Campo que identifica o tipo de usuario como comum
     operario: Campo que identifica o tipo de usuario como operario
     cod_usuario: Campo único de identificação de um usuario
@@ -94,6 +89,20 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     cod_cidade: Campo que armazena o código de identificação referente ao cidade em que o semáforo foi localizado
     cod_bairro: Campo que armazena o código de identificação referente ao bairro em que o semáforo foi localizado
     cod_logradouro: Campo que armazena o código de identificação referente ao logradouro em que o semáforo foi localizado
+    velocidade: Campo que guarda a velocidade média dos veículos
+    tempo_fechado: Campo que armazena o tempo, baseado nos cálculos , que o semáforo ficará fechado
+    latitude: Campo que armazena posição Y de localização
+    longitude: Campo que armazena posição X de localização
+    dia: Campo que guarda a informação do dia que o carro passou na captura
+    mes: Campo que guarda a informação do mês que o carro passou na captura
+    ano: Campo que guarda a informação do ano que o carro passou na captura
+    hora: Campo que guarda a informação da hora que o carro passou na captura
+    minuto: Campo que guarda a informação do minuto que o carro passou na captura
+    data_captura: Campo que guarda a informação de data e hora que o carro passou na captura
+    cod_sensor: Campo que armazena o código dos sensores relacionados ao semáforo
+    modelo: Campo que armazena o modelo dos sensores
+    tempo_aberto:Campo que armazena o tempo, baseado nos cálculos , que o semáforo ficará aberto
+    
 
     
 >## Marco de Entrega 01 em: (12/05/2018)<br>
