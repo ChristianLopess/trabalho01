@@ -1,4 +1,4 @@
-# TRABALHO 01:  Semaforup É LIXO
+# TRABALHO 01:  Semaforup
 Trabalho desenvolvido durante a disciplina de Banco de Dados do Integrado
 
 # Sumário
