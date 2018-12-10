@@ -6,7 +6,7 @@ Trabalho desenvolvido durante a disciplina de Banco de Dados do Integrado
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
 Christian Lopes de Souza:christianlopessouza@gmail.com<br>
-Gabriel de Souza Klier Conceição:desouzagabriel80@gmail.com<br>
+
 ...
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
@@ -27,7 +27,7 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 > O sistema proposto para o semafobot trata-se de um sistema integrado a câmeras próprias capazes de analisar a movimentação de veículos em cada uma das vias de um cruzamento; e, a partir dos dados, tomar automaticamente decisões para melhorar o fluxo na via mais carregada. Na prática cotidiana, ele ajustará o sinal para permanecer aberto por mais tempo onde há maior demanda e fechar mais rapidamente quanto for oportuno, marcadores no asfalto contam a passagem dos veículos e os dados são enviados para um banco de dados, que calcula quanto tempo os sinais devem ficar abertos e fechados. A informação é utilizada por um controlador para fazer o ajuste.Todos os dados e imagens coletadas pelos semafobot's serão enviadas para o nossos bancos de dados, de lá, os técnicos farão o acompanhamento das condições para também realizar intervenções manuais.
 
 
-### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
+### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br> ✔&
 Neste ponto a codificação não e necessária, somente as ideias de telas devem ser desenvolvidas. O princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas e/ou descartadas <br>
 
 Sugestão: https://balsamiq.com/products/mockups/<br>
@@ -36,15 +36,17 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ![Arquivo PDF do Protótipo Balsamiq feito para Empresa Devcom](https://github.com/discipint/trabalho01/blob/master/arquivos/EmpresaDevcom.pdf?raw=true "Empresa Devcom")
 
 
-#### 4.1 TABELA DE DADOS DO SISTEMA:   
-    ![Tabela](https://github.com/semaforup/trabalho01/blob/master/arquivos/TabelaSemaforup%20(1).xlsx "Modelo Conceitual")    
+#### 4.1 TABELA DE DADOS DO SISTEMA: ✔  
+![Tabela](https://github.com/semaforup/trabalho01/blob/master/arquivos/TabelaSemaforup%20(1).xlsx "Modelo Conceitual")    
     
     
-#### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-    b) Crie uma lista com os 10 principais relatórios que poderão ser obtidos por meio do sistema proposto!
-    
->## Marco de Entrega 01 em: (24/03/2018)<br>
+#### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO? ✔
+1)qual a quantidade de veículos que passam em um determinado semáforo em um ano?
+2)em quais locaos houve maior quantidade de veículos em uma semana?
+3)quantos usuários acessaram o sistema em 3 dias?
+4)quantos semáforos há em um determinado bairro?
+5)quantos carros ultrapassaram uma determinada velocidade em determinado logradouro?
+
 
 ### 5.MODELO CONCEITUAL<br>
     A) NOTACAO ENTIDADE RELACIONAMENTO 
@@ -62,13 +64,18 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     
         
     
-#### 5.1 Validação do Modelo Conceitual
+#### 5.1 Validação do Modelo Conceitual ✔&
     [Grupo01]: [Nomes dos que participaram na avaliação]
     [Grupo02]: [Nomes dos que participaram na avaliação]
-## Marco de Entrega 01 em: (20/04/2018)<br>
+
+
 #### 5.2 DECISÕES DE PROJETO
     [atributo]: [descrição da decisão]
-    
+
+
+ 
+
+
     EXEMPLO:
     a) Campo endereço: em nosso projeto optamos por um campo multivalorado e composto, pois a empresa 
     pode possuir para cada departamento mais de uma localização... 
@@ -76,11 +83,19 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 #### 5.3 DESCRIÇÃO DOS DADOS 
     [objeto]: [descrição do objeto]
-    
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+    comum: Campo que identifica o tipo de usuario como comum
+    operario: Campo que identifica o tipo de usuario como operario
+    cod_usuario: Campo único de identificação de um usuario
+    nome_usuario: Campo que que armazena os nomes dos usuarios
+    senha_usuario: Campo que armazena as senhas de determinado usuario
+    email: Campo que armazena os emails de determinado usuario
+    telefone: Campo que armazena os telefones de determinado usuario
+    sexo: Campo que armazena o tipo de gêneros
+    cod_cidade: Campo que armazena o código de identificação referente ao cidade em que o semáforo foi localizado
+    cod_bairro: Campo que armazena o código de identificação referente ao bairro em que o semáforo foi localizado
+    cod_logradouro: Campo que armazena o código de identificação referente ao logradouro em que o semáforo foi localizado
 
+    
 >## Marco de Entrega 01 em: (12/05/2018)<br>
 ### 6	MODELO LÓGICO<br>
         a) inclusão do modelo lógico do banco de dados
