@@ -107,14 +107,14 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     )
 
     CREATE TABLE SEMAFORO(
+        tempo_aberto int,
         tempo_fechado int,
         latitude int,
         longitude int,
         cod_semaforo int PRIMARY KEY,
         cidade int,
-        bairro int
-        logra int,
-        tempo_aberto int       
+        bairro int,
+        logra int 
     )
 
     CREATE TABLE CAPTURA(
@@ -125,17 +125,19 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         hora int,
         minuto int,
         velocidade int,
-        cod_semaforo int
+        cod_semaforo int,
+        cod_sensor int
     )
 
-    CREATE TABLE MAP(
+    CREATE TABLE mapa(
         cidade int,
         desc_cidade varchar(40),
         bairro int,
         desc_bairro varchar(40), 
         logra int,
         desc_logra varchar(40),
-        cep int PRIMARY KEY
+        cep int PRIMARY KEY,
+     cod_semaforo int
     )
 
     CREATE TABLE SENSOR(
@@ -146,14 +148,85 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físic
-        b) formato .SQL
+    insert into usuario values
+    ('c',1010,'Renato','re12345','renat@email.com',999043437,'M'),
+    ('c',2020,'Cláudio','clsa3232','claudio@email.com',994387292,'M'),
+    ('c',3030,'Erick','hehehe','erick@email.com',999982493,'M'),
+    ('c',4040,'Flávia','flavinha332','flavia@email.com',869979054,'F'),
+    ('o',5050,'Geoavana','88776','geova@email.com',987765543,'F'),
+    ('c',6060,'Brenner','cabecademelao','brenner@email.com',977698985,'M'),
+    ('o',7070,'Nenê','ostempos','nena@email.com',999043437,'M'),
+    ('c',8080,'Aguirre','2001','guirre@email.com',999043437,'M'),
+    ('o',9090,'Adriana','33412333','adrinaa@email.com',999043437,'F'),
+    ('c',2220,'Fabíola','291201','fabii@email.com',99869953,'F'),
+    ('o',2300,'Iana','Ch923','iana@email.com',898908964,'F'),
+    ('c',3320,'Felipe','0337','felipe@email.com',999999778,'M'),
+    ('c',3220,'Jandira','12222227','jandira@email.com',978747868,'F'),
+    ('c',3430,'Reinaldo','bananananica','reinld@email.com',998775945,'M'),
+    ('c',3310,'Marta','polentafrita','mart@email.com',988765435,'M')
+    
+    insert into mapa values 
+    (01,'N.Venécia',001,'Mizacity',0015,'Rua da Madeira',010010015,010),
+    (02,'Cariacica',002,'Campo Grande',0001,'Rua Dois',010020001,020),
+    (02,'Cariacica',002,'Campo Grande',0002,'Rua Barracada',010020002,030),
+    (02,'Cariacica',004,'Cobilândia',0003,'Rua Rei',020040003,040),
+    (02,'Cariacica',005,'Duandra',0004,'Rua Catupiry',020050004,050),
+    (03,'Vitória',006,'Vitorinha',0005,'Av da Penha',030060005,060),
+    (03,'Vitória',007,'Mouchoara',0006,'Rua Taquara',030070006,070),
+    (03,'Vitória',008,'Centro',0007,'Rua Santo Antonio',030080007,080),
+    (03,'Vitória',009,'Penha',0008,'Nossa Senhora',030090008,090),
+    (03,'Vitória',010,'Marataises',0009,'Rua Moreira',030100009,100),
+    (04,'Serra',011,'Porto Canoa',0010,'Av Mata da Serra',040110010,110),
+    (04,'Serra',012,'Serra Dourada',0011,'Rua Trombeta',040120011,120),
+    (04,'Serra',013,'Serra Dourada 2',0012,'Rua Japurá',040130012,130),
+    (04,'Serra',014,'Porto Dourado',0013,'Rua Centopeia',040140013,140),
+    (05,'Vila Velha',015,'Bicanga',0014,'Bairro da Paz',050150014,150) 
+
+    insert into semaforo values
+    (30,30,3213,4234,010,'01','001','0015'),
+    (15,45,7341,8743,020,'02','002','0001'),
+    (12,48,1239,0976,030,'02','002','0002'),
+    (50,10,4543,1280,040,'02','004','0003'),
+    (32,28,1321,4313,050,'02','005','0004'),
+    (45,5,5433,1233,060,'03','006','0005'),
+    (30,30,4640,7688,070,'03','007','0006'),
+    (30,30,5775,4986,080,'03','008','0007'),
+    (31,39,8676,6877,090,'03','009','0008'),
+    (20,40,3213,0746,100,'04','010','0009'),
+    (37,23,9870,1988,110,'04','011','0010'),
+    (33,27,6885,3223,120,'04','012','0011'),
+    (16,44,5689,7654,130,'04','013','0012'),
+    (30,30,1232,9862,140,'04','014','0013'),
+    (28,32,8370,3214,150,'05','015','0014')
+
+    insert into sensor values
+    (3213,3125,00001,'KJH98'),
+    (4314,1223,00002,'BCG62'),
+    (4513,7659,00003,'ASF53'),
+    (8743,8980,00004,'KGB12'),
+    (1243,3233,00005,'NMJ89'),
+    (5478,7565,00006,'PIO09'),
+    (8945,2456,00007,'LKI90'),
+    (3323,7657,00008,'VCF52'),
+    (4432,8998,00009,'AYW12'),
+    (7776,4323,00010,'AQW22'),
+    (3323,2345,00011,'TYY21'),
+    (3213,8772,00012,'NHG90'),
+    (4344,9089,00013,'BGT51'),
+    (3112,1235,00014,'ZAW89'),
+    (6576,5466,00015,'LLM23')
+
+    insert into captura values
+     (timestamp '2014-07-02 06:14:25'),02,07,2014,06,14,50,1010),	
+     ((timestamp '2016-12-10 22:55:25'),12,10,2016,22,55,35,2020),
+     ((timestamp '2017-02-28 12:01:25'),28,02,2017,12,01,58,2020)
+
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS✔
-       (https://github.com/semaforup/trabalho01/blob/master/arquivos/2 "Insert+Modfis")
-
+       (https://github.com/semaforup/trabalho01/blob/master/arquivos/1 "Insert+Modfis")
+       
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS✔
-       (https://github.com/semaforup/trabalho01/blob/master/arquivos/1 "Insert,Modelo Fisico,Drop")
+       (https://github.com/semaforup/trabalho01/blob/master/arquivos/2 "Insert+Modfis")
 
 
 
