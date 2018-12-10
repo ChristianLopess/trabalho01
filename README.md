@@ -59,7 +59,6 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 
 #### 5.2 DECISÕES DE PROJETO ✔
-    [atributo]: [descrição da decisão]
     esta_em: A opção de usar uma tabela que guarde as informações separadas das localidades pois podem haver locais  com os mesmo nomes
     SENSOR: A opção de usar uma tabela que guarde todas as informações de carros captados pois as informações altera
     CAPTURA: A opção de captura acontece a cada vez que um carro passa no sensor 
@@ -93,32 +92,69 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     tempo_aberto:Campo que armazena o tempo, baseado nos cálculos , que o semáforo ficará aberto
     
 
-    
->## Marco de Entrega 01 em: (12/05/2018)<br>
-### 6	MODELO LÓGICO<br>
+### 6	MODELO LÓGICO<br>✔
 ![Alt text](https://github.com/semaforup/trabalho01/blob/master/imagens/L%C3%B3gico.PNG?raw=true "Modelo Lógico")
 
-### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas DDL 
-        (criação de tabelas, alterações, etc..)          
+### 7	MODELO FÍSICO<br>✔
+    CREATE TABLE USUARIO(
+        tipo char(1),
+        cod_usuario int PRIMARY KEY,
+     nome_usuario varchar(40),
+        senha_usuario varchar(40),
+        email varchar(60),
+        telefone char(9),
+        sexo char(1)
+    )
+
+    CREATE TABLE SEMAFORO(
+        tempo_fechado int,
+        latitude int,
+        longitude int,
+        cod_semaforo int PRIMARY KEY,
+        cidade int,
+        bairro int
+        logra int,
+        tempo_aberto int       
+    )
+
+    CREATE TABLE CAPTURA(
+        data_captura timestamp PRIMARY KEY,
+        dia int,
+        mes int,
+        ano int,
+        hora int,
+        minuto int,
+        velocidade int,
+        cod_semaforo int
+    )
+
+    CREATE TABLE MAP(
+        cidade int,
+        desc_cidade varchar(40),
+        bairro int,
+        desc_bairro varchar(40), 
+        logra int,
+        desc_logra varchar(40),
+        cep int PRIMARY KEY
+    )
+
+    CREATE TABLE SENSOR(
+     latitude int,
+     longitude int,
+     cod_sensor int,
+     modelo varchar(20))        
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
         a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físic
         b) formato .SQL
 
-#### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
-        a) Junção dos scripts anteriores em um único script 
-        (create para tabelas e estruturas de dados + dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
-#### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
-        a) Junção dos scripts anteriores em um único script 
-        (Drop table + Create de tabelas e estruturas de dados + dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
+#### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS✔
+       (https://github.com/semaforup/trabalho01/blob/master/arquivos/2 "Insert+Modfis")
+
+#### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS✔
+       (https://github.com/semaforup/trabalho01/blob/master/arquivos/1 "Insert,Modelo Fisico,Drop")
+
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
