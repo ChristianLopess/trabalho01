@@ -10,21 +10,11 @@ Christian Lopes de Souza:christianlopessouza@gmail.com<br>
 ...
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
-Este documento contém a especificação do projeto do banco de dados <semaforup> 
-<br>e motivação da escolha realizada. <br>
-
-> O projeto Semaforup tem como princípio melhorar o trânsito, deixando-o mais fluido e mais rápido. A sincronização dos semáforos de um percurso para evitar interromper o trânsito em cada esquina. A nova tecnologia também permite que um operador de trânsito opere os sinais por meio de computadores ou mesmo de um celular. A possibilidade é útil, por exemplo, para orientar desvios no trânsito, colocar os sinais no piscar amarelo ou acionar o verde e o vermelho por tempo indeterminado. Sua utilidade não irá só agilisar os motoristas, assim também, como  os pedestres, que em grandes avenidas movimentas não precisarão esperar um grande tempo para atravessar a rua. Os sensores, com sua eficiência captarão, por meio de sensores a movimentação de pedestres e veículos, evitando acidentes e simultaneamente prezando pela rapidez e dinamização.
+As formas de tirar uma carteira de habilitação nos dias atuais ficaram facilitadas, logo prevendo que a idade mínima é de 18 anos, logo a quantidade de pessoas que possuem veículos acabam por aumentar e assim tende a continuar. Com a facilidade de comprar um veículo, usado ou novo, seja por meio de longos financiamentos ou não. Existem por volta de 42 milhões de Carteiras de Motoristas ativas no Brasil. Com o forte avanço e o crescente número de veículos, as ruas devem estar devidademente preparadas para se adaptar a um grande volume de tráfego que varia diariamente dependendo do momento. Para isto, a forma de semáforos com tempo fixo já não vai ser a melhor proposta para conter o atraso no transito em função da demanda. Sendo assim, nosso trabalho visa o desenvolvimento de um semáforo inteligente e totalmente autônomo que conduza o tráfego de uma forma que atenda a demanda de veículos locais. Em um cruzamento de duas ou mais vias existem movimentos que não podem ser feitos simultaneamente, pois podem se colidir, estabelencendo normas de controle de direito de passagem com o objetivo de melhorar o fluxo do tráfego e reduzir os riscos de acidentes.
  
 
 ### 3.MINI-MUNDO<br>
-
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas) <br>
-Entrevista com o usuário e identificação dos requisitos.<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
-
-> O sistema proposto para o semafobot trata-se de um sistema integrado a câmeras próprias capazes de analisar a movimentação de veículos em cada uma das vias de um cruzamento; e, a partir dos dados, tomar automaticamente decisões para melhorar o fluxo na via mais carregada. Na prática cotidiana, ele ajustará o sinal para permanecer aberto por mais tempo onde há maior demanda e fechar mais rapidamente quanto for oportuno, marcadores no asfalto contam a passagem dos veículos e os dados são enviados para um banco de dados, que calcula quanto tempo os sinais devem ficar abertos e fechados. A informação é utilizada por um controlador para fazer o ajuste.Todos os dados e imagens coletadas pelos semafobot's serão enviadas para o nossos bancos de dados, de lá, os técnicos farão o acompanhamento das condições para também realizar intervenções manuais.
+O sistema que foi proposto para o Semaforup, trata-se de um sistema simples que calcula proporcionalmente de 1 para 1 os semáforos cadastrados na base de dados o tempo que um semaforo demora pra ficar aberto. Os semáforos com essa tecnologia e esse software são chamados de "Semafobots", eles tem uma programação e a utilização de sensores que permitem calcular o tempo que outro semáforo  irá ficar aberto. A informção é captada por um sensor que se localiza no chão paralelo ao semáforo, 15 metros depois se encontra o sensor complementar que fecha o ciclo de captação, então, as informações relacionadas a quantidade de carros (fluxo) e velocidade média por minuto. Com essas informações dentro da memória, todos os semáforos que tenham alguma relação ou vinculo, que esteja relacionada à algum cruzamento ou ruas que dependem do fluxo da outra. Logo é feita uma escala de 1 a 100 (percentual) em coparação de dois semafobots e fará um percentual do tempo limite que foi imposto à um semáforo - que é de 60 segundos - e dividirá proporcinalmente equivalente a média do fluxo de carros (por minuto) para cada uma dessas ruas. Em um exemplo para ficar mais claro .: Uma rua chama "AA" e outra rua chamada "BB", dentro de um minuto passaram 54 carros na Rua AA e 33 carros na Rua BB, sendo assim com essas informações, o software soma os valores das quantidade de carros (33+54=87) e dividem cada valor da Rua pelo todo (33/87=~38%), (54/87=~62%). Agora tendo uma relação de 38(Rua AA) para 62(Rua BB), temos que 38% de 1 minuto ficará destinado para o semáforo referente a Rua AA e 62% destinado a Rua BB, sendo assim 22.8 e 37,2 segundos. Há em caso de cruzamentos, relações específicas que fazem média com várias ruas, tendo uma base de dados maior para armazenar mais informações, um sistema híbrido para evitar acidente e diminuir a demora do transito. Haverá o semáfaro com uma configuração fixa, que será avaliada se será necessário a utilização desse recurso. A "configuaração fixa" é de um tempo fixo, determinada por ruas específicas ou ruas de modo geral, que por padrão são 30 segundos, mas podem ser alteradas ou cadastradas com tempo diferente.
 
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br> ✔
@@ -236,38 +226,31 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+     a)jupyter
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-    a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+     a)jupyter
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
+     a)jupyter
 
 
     
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
-
+     a)jupyter
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
-        a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
-        b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+     a)jupyter
         
 
-## Marco de Entrega 02 em: (16/06/2018)<br>
-### ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO SEMESTRAL (Mínimo 6 e Máximo 10)<br>
-<br>
-    Data de Entrega: (30/06/2018)
-<br>
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-
+     a)jupyter
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
+     a)not
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
-
+     a)jupyter
 #### 9.11	LISTA DE CODIGOS DAS FUNÇÕES E TRIGGERS<br>
         Detalhamento sobre funcionalidade de cada código.
         a) Objetivo
